@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Major Exchanges</title>
+  <meta name="description" content="Contactez Major Exchanges pour une démonstration de l'outil, un devis, ou en savoir plus sur la méthodologie d'étude de la personnalité." />
+  <meta property="og:title" content="Contact — Major Exchanges" />
+  <meta property="og:description" content="Démonstration, devis ou questions. Nous revenons vers vous sous 48 heures." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><span class="dot"></span>MAJOR EXCHANGES</a>
+    <ul class="nav-links">
+      <li><a href="methodologie.html">Méthodologie</a></li>
+      <li><a href="outils.html">Outils</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="references.html">Références</a></li>
+      <li><a href="metier.html">Notre métier</a></li>
+      <li><a href="expert.html">Expert</a></li>
+      <li><a href="cv-softskills.html">CV Soft Skills</a></li>
+      <li><a href="contact.html" class="nav-cta">Accès outil →</a></li>
+    </ul>
+    <button class="nav-burger" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<main>
+
+<section class="page-header">
+  <div class="page-header-inner">
+    <div>
+      <div class="eyebrow" style="margin-bottom:20px;">Chapitre 08</div>
+      <h1 class="reveal">Prenons <em>contact</em>.</h1>
+    </div>
+    <div class="page-header-meta reveal reveal-delay-1">Démo · Devis · Questions</div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="section">
+  <div class="section-inner">
+    <div class="twocol">
+      <div class="reveal">
+        <div class="section-number">Formulaire</div>
+        <h2>Parlons de<br><em class="display-italic">votre projet</em>.</h2>
+        <p class="lead mt-sm">
+          Qu'il s'agisse d'une première découverte de la méthodologie, d'un devis pour la version Profil ou Expertise, ou d'une réflexion plus globale sur vos process RH, nous revenons vers vous sous 48 heures.
+        </p>
+
+        <div style="margin-top:48px; display:flex; flex-direction:column; gap:24px;">
+          <div>
+            <div class="eyebrow" style="margin-bottom:8px;">E-mail</div>
+            <a href="mailto:contact@major-exchanges.com" style="font-family:var(--font-display); font-size:1.25rem; border-bottom:1px solid var(--gold);">contact@major-exchanges.com</a>
+          </div>
+          <div>
+            <div class="eyebrow" style="margin-bottom:8px;">Accès à l'outil</div>
+            <a href="https://app.major-exchanges.com" style="font-family:var(--font-display); font-size:1.25rem; border-bottom:1px solid var(--gold);">app.major-exchanges.com</a>
+          </div>
+          <div>
+            <div class="eyebrow" style="margin-bottom:8px;">Écosystème</div>
+            <div style="display:flex; gap:20px; flex-wrap:wrap; margin-top:8px;">
+              <a href="https://www.equarior.com" style="font-family:var(--font-mono); font-size:0.875rem;">equarior.com →</a>
+              <a href="https://www.equarior-origin.com" style="font-family:var(--font-mono); font-size:0.875rem;">equarior-origin.com →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-1">
+        <!--
+          FORMSPREE : remplace YOUR_FORM_ID par ton ID réel après inscription sur formspree.io
+          1. Crée un compte gratuit sur https://formspree.io
+          2. Crée un nouveau form avec l'email contact@major-exchanges.com
+          3. Copie l'ID (format xxxxxxxx) et remplace-le ci-dessous
+        -->
+        <form id="contactForm" class="form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-group">
+            <label for="name">Nom · Prénom</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="company">Société</label>
+            <input type="text" id="company" name="company">
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Téléphone</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+          <div class="form-group">
+            <label for="subject">Objet</label>
+            <select id="subject" name="subject" required>
+              <option value="">Choisir...</option>
+              <option value="Demande de démonstration">Demande de démonstration</option>
+              <option value="Demande de devis">Demande de devis</option>
+              <option value="Formation & intégration">Formation & intégration</option>
+              <option value="Devenir expert certifié">Devenir expert certifié</option>
+              <option value="CV Soft Skills">CV Soft Skills</option>
+              <option value="Autre">Autre</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Parlez-nous de votre contexte, vos objectifs..."></textarea>
+          </div>
+          <!-- Honeypot anti-spam (caché par CSS) -->
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+          <button type="submit" class="btn btn-primary">Envoyer <span class="arrow">→</span></button>
+          <div id="formStatus" style="display:none; padding:16px; margin-top:16px; font-family:var(--font-mono); font-size:0.8125rem; letter-spacing:0.05em;"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ rapide -->
+<section class="section section-light">
+  <div class="section-inner">
+    <div class="section-number">Questions fréquentes</div>
+    <h2 class="reveal">Trois questions<br><em class="display-italic">qu'on nous pose souvent</em>.</h2>
+
+    <div class="benefits">
+      <div class="benefit reveal">
+        <div class="benefit-num">Q.01</div>
+        <h3>Combien de temps dure la formation ?</h3>
+        <p>1 journée pour la version Profil, 2 à 3 journées pour la version Expertise. La formation est offerte dans le cadre de l'intégration du guide.</p>
+      </div>
+      <div class="benefit reveal reveal-delay-1">
+        <div class="benefit-num">Q.02</div>
+        <h3>Faut-il un profil psychologue pour utiliser l'outil ?</h3>
+        <p>Non. La méthodologie est conçue pour être opérée par les chargés de recrutement, consultants RH et coachs formés. L'expertise s'acquiert par la formation.</p>
+      </div>
+      <div class="benefit reveal reveal-delay-2">
+        <div class="benefit-num">Q.03</div>
+        <h3>Comment se positionne Major Exchanges face au MBTI ?</h3>
+        <p>Le MBTI a servi de support comparatif d'étalonnage lors de la validation. Major Exchanges pousse l'analyse plus loin, sur 5 niveaux et 48 requis.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>MAJOR EXCHANGES</h3>
+        <p>Outil RH de nouvelle génération pour l'étude de la personnalité, des motivations et la dynamisation des engagements.</p>
+      </div>
+      <div><h5>Produit</h5><ul><li><a href="methodologie.html">Méthodologie</a></li><li><a href="outils.html">Outils</a></li><li><a href="services.html">Services</a></li><li><a href="expert.html">Expert</a></li><li><a href="cv-softskills.html">CV Soft Skills</a></li></ul></div>
+      <div><h5>Société</h5><ul><li><a href="metier.html">Notre métier</a></li><li><a href="references.html">Références</a></li><li><a href="contact.html">Contact</a></li><li><a href="cgu.html">CGU</a></li><li><a href="mentions-legales.html">Mentions légales</a></li></ul></div>
+      <div><h5>Liens</h5><ul><li><a href="https://www.equarior-origin.com">Equarior Origin</a></li><li><a href="https://www.equarior.com">Equarior</a></li><li><a href="https://app.major-exchanges.com">Accès outil</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Major Exchanges — Tous droits réservés</div>
+      <div>Paris · Luxembourg · USA</div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/script.js"></script>
+</body>
+</html>
