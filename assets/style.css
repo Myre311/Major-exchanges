@@ -151,13 +151,27 @@ p { max-width: 68ch; }
 
 .nav-logo {
   font-family: var(--font-display);
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   font-weight: 500;
   letter-spacing: 0.08em;
   color: var(--paper);
   display: flex;
-  align-items: baseline;
-  gap: 8px;
+  align-items: center;
+  gap: 12px;
+  transition: opacity 0.2s var(--ease);
+  line-height: 1;
+}
+
+.nav-logo:hover { opacity: 0.85; }
+
+.nav-logo img {
+  height: 36px !important;
+  width: auto !important;
+  max-width: 36px;
+  max-height: 36px;
+  display: block;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .nav-logo .dot {
@@ -165,6 +179,17 @@ p { max-width: 68ch; }
   background: var(--rust);
   border-radius: 50%;
   display: inline-block;
+}
+
+.logo-text {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* Sur mobile, masquer le texte, ne garder que le logo */
+@media (max-width: 560px) {
+  .nav-logo .logo-text { display: none; }
+  .nav-logo img { height: 32px !important; max-height: 32px; max-width: 32px; }
 }
 
 .nav-links {
@@ -276,6 +301,57 @@ main { padding-top: 84px; }
   justify-content: center;
   position: relative;
   overflow: hidden;
+  background-image: url('hero-whale.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* Overlay dégradé par-dessus la photo pour lisibilité du texte */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(10, 22, 40, 0.55) 0%,
+      rgba(10, 22, 40, 0.70) 40%,
+      rgba(10, 22, 40, 0.88) 100%
+    ),
+    radial-gradient(
+      ellipse at 80% 20%,
+      rgba(194, 87, 46, 0.18) 0%,
+      transparent 55%
+    );
+}
+
+/* Rosace décorative côté gauche */
+.hero-graphic {
+  position: absolute;
+  top: 50%;
+  left: 14%;
+  transform: translateY(-50%);
+  width: clamp(280px, 40vw, 480px);
+  height: clamp(280px, 40vw, 480px);
+  z-index: 2;
+  opacity: 0.85;
+  pointer-events: none;
+  animation: roseRotate 120s linear infinite;
+}
+
+@keyframes roseRotate {
+  from { transform: translateY(-50%) rotate(0deg);   }
+  to   { transform: translateY(-50%) rotate(360deg); }
+}
+
+/* Tout le contenu passe au-dessus de l'overlay ET de la rosace */
+.hero > .hero-inner,
+.hero > .hero-sub {
+  position: relative;
+  z-index: 3;
 }
 
 .hero-inner {
@@ -293,6 +369,7 @@ main { padding-top: 84px; }
   font-weight: 300;
   line-height: 0.95;
   max-width: 14ch;
+  text-shadow: 0 2px 40px rgba(0, 0, 0, 0.4);
 }
 
 .hero-title em {
@@ -306,7 +383,7 @@ main { padding-top: 84px; }
   font-size: 0.75rem;
   letter-spacing: 0.15em;
   color: var(--paper-soft);
-  opacity: 0.7;
+  opacity: 0.8;
   text-transform: uppercase;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
@@ -324,7 +401,7 @@ main { padding-top: 84px; }
   margin-left: auto;
   margin-right: auto;
   padding-top: 48px;
-  border-top: 1px solid var(--ink-line);
+  border-top: 1px solid rgba(244, 239, 230, 0.2);
 }
 
 .hero-sub .lead { max-width: 48ch; }
@@ -337,29 +414,18 @@ main { padding-top: 84px; }
   justify-content: flex-end;
 }
 
-/* Decorative hero element */
-.hero-graphic {
-  position: absolute;
-  top: 120px;
-  right: var(--gutter);
-  width: clamp(200px, 28vw, 420px);
-  height: clamp(200px, 28vw, 420px);
-  opacity: 0.5;
-  pointer-events: none;
-  animation: rotate 80s linear infinite;
-}
-
-@keyframes rotate {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
-
 @media (max-width: 900px) {
   .hero-inner { grid-template-columns: 1fr; gap: 40px; }
   .hero-meta { display: none; }
   .hero-sub { grid-template-columns: 1fr; gap: 32px; }
   .hero-ctas { justify-content: flex-start; }
-  .hero-graphic { display: none; }
+  /* Sur mobile, la rosace passe en décoration plus discrète derrière le texte */
+  .hero-graphic {
+    left: -10%;
+    opacity: 0.25;
+    width: 300px;
+    height: 300px;
+  }
 }
 
 /* =========================================================
